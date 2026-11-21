@@ -1,0 +1,14 @@
+{
+  "activated_at_utc": "2026-11-20T01:50:33.952431+00:00",
+  "active_model": "models/refined_feedback_v1/best_model.pt",
+  "active_sha256": "d0b66d9beb3e739a81691af6f4364e3a0efd988393ef9cb9bf35282aeaf72520",
+  "previous_model": "models/first_run/best_model.pt",
+  "comparison": "results/comparisons/refined_feedback_v1/comparison.json",
+  "validation_checks": {
+    "macro_f1_not_lower": true,
+    "overall_accuracy_not_lower": true,
+    "sphynx_recall_strictly_higher": true
+  },
+  "test_used": false,
+  "automatic_annotation_replay": false
+}

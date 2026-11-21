@@ -1006,3 +1006,40 @@ correspondent aux originaux. Voir `results/interface/verification_telechargement
 Le parcours importation → classification → revue → téléchargement est fonctionnel.
 Les prochaines priorités sont l'évaluation finale indépendante, l'analyse des
 limites et la préparation des livrables académiques ; les races restent facultatives.
+
+## 28. Version binaire fixée avant le test — 21 novembre 2026
+
+L'extension de races a été retirée par l'utilisatrice. La priorité reste la
+classification binaire. À sa demande, le modèle actif refined_feedback_v1 est
+conservé sous results/evaluation/binary_final_v1/best_model.pt, identique par
+SHA-256 d0b66d9beb3e739a81691af6f4364e3a0efd988393ef9cb9bf35282aeaf72520.
+Le manifeste fixe l'époque 3, les paramètres d'entraînement et de prétraitement,
+les versions logicielles, le protocole de décision et les empreintes des sources
+et partitions. Des copies des sources pertinentes et configurations sont conservées.
+La commande scripts/freeze_evaluation.py --verify détecte les divergences ;
+la création refuse d'écraser un gel existant. Les trois tests de contrôle couvrent
+l'altération des poids conservés, des sources et des partitions.
+Aucune image de test ouverte, aucune inférence ni métrique finale produite.
+Prochaine étape : évaluer la copie gelée sur les 3 669 images de test, sans
+correction humaine ni réglage sur le test. Référence majoritaire fixée à Chien
+selon l'entraînement. Voir docs/gel_version_evaluation.md.
+
+
+## 29. Évaluation finale réalisée — 21 novembre 2026
+
+La copie gelée binary_final_v1 a été évaluée sur les 3 669 images officielles
+de test, après contrôle des empreintes des poids, sources, partitions et images.
+Aucun réentraînement, seuil ajusté sur le test ou remplacement par correction
+humaine. Décision argmax, CPU 4 threads, lots de 32, aucune augmentation.
+Résultats : exactitude 98,42 %, F1 macro 98,18 %,
+3611 bonnes classifications et 58 erreurs. Matrice (lignes réelles
+Chat/Chien, colonnes prédites Chat/Chien) : [[1139, 44], [14, 2472]].
+Référence majoritaire Chien fixée sur train : exactitude 67,76 %.
+Les sorties, scores par image, erreurs, graphiques et empreintes sont dans
+results/evaluation/binary_final_v1/test_results/. Le script
+scripts/evaluate_final.py refuse de les écraser. 55 tests passent.
+Le manifeste du gel n'est pas modifié : il décrit l'état AVANT cette évaluation.
+Le test est désormais consulté ; ne plus le traiter comme inédit pour choisir
+le modèle. Les mesures Oxford ne garantissent pas la performance dans un refuge.
+Voir docs/evaluation_finale.md. Prochaines priorités : compréhension des erreurs,
+rapport final de 10 pages, présentation orale et archive Moodle.

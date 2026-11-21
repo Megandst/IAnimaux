@@ -1,0 +1,7 @@
+image_id,relative_path,breed,species,target,prediction,predicted_species,p_chat,p_chien,confidence
+Bombay_215,images/Bombay_215.jpg,Bombay,Chat,0,1,Chien,0.0009837234392762184,0.999016284942627,0.999016284942627
+Siamese_22,images/Siamese_22.jpg,Siamese,Chat,0,1,Chien,0.001112307538278401,0.9988877177238464,0.9988877177238464
+wheaten_terrier_88,images/wheaten_terrier_88.jpg,wheaten_terrier,Chien,1,0,Chat,0.9949324727058411,0.005067529622465372,0.9949324727058411
+Siamese_91,images/Siamese_91.jpg,Siamese,Chat,0,1,Chien,0.44266971945762634,0.5573302507400513,0.5573302507400513
+Sphynx_9,images/Sphynx_9.jpg,Sphynx,Chat,0,1,Chien,0.45270413160324097,0.5472958087921143,0.5472958087921143
+Abyssinian_36,images/Abyssinian_36.jpg,Abyssinian,Chat,0,1,Chien,0.48821139335632324,0.5117886662483215,0.5117886662483215

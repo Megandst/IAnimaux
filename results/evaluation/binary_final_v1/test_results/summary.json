@@ -1,0 +1,65 @@
+{
+  "images": 3669,
+  "correct": 3611,
+  "errors": 58,
+  "accuracy": 0.9841918778958845,
+  "f1_macro": 0.9817879355107273,
+  "classification_report": {
+    "Chat": {
+      "precision": 0.9878577623590633,
+      "recall": 0.9628064243448858,
+      "f1-score": 0.9751712328767124,
+      "support": 1183.0
+    },
+    "Chien": {
+      "precision": 0.9825119236883942,
+      "recall": 0.9943684633950121,
+      "f1-score": 0.9884046381447421,
+      "support": 2486.0
+    },
+    "accuracy": 0.9841918778958845,
+    "macro avg": {
+      "precision": 0.9851848430237288,
+      "recall": 0.9785874438699489,
+      "f1-score": 0.9817879355107273,
+      "support": 3669.0
+    },
+    "weighted avg": {
+      "precision": 0.9842355887599127,
+      "recall": 0.9841918778958845,
+      "f1-score": 0.9841377756666612,
+      "support": 3669.0
+    }
+  },
+  "confusion_matrix": [
+    [
+      1139,
+      44
+    ],
+    [
+      14,
+      2472
+    ]
+  ],
+  "confusion_matrix_order": [
+    "Chat",
+    "Chien"
+  ],
+  "majority_baseline": {
+    "target_from_train": 1,
+    "class": "Chien",
+    "accuracy": 0.6775688198419187,
+    "f1_macro": 0.40389926888708366
+  },
+  "loss": 0.04268521564875482,
+  "inference_seconds": 138.11574762500823,
+  "data_integrity_seconds": 1.4031973329838365,
+  "started_at_utc": "2026-11-21T21:13:22.508910+00:00",
+  "completed_at_utc": "2026-11-21T21:15:42.102200+00:00",
+  "freeze_id": "binary_final_v1",
+  "checkpoint_sha256": "d0b66d9beb3e739a81691af6f4364e3a0efd988393ef9cb9bf35282aeaf72520",
+  "test_used": true,
+  "model_updated": false,
+  "human_corrections_applied": false,
+  "test_used_for_selection": false
+}

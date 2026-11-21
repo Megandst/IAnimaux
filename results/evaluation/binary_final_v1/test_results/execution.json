@@ -1,0 +1,45 @@
+{
+  "status": "completed",
+  "started_at_utc": "2026-11-21T21:13:22.508910+00:00",
+  "checkpoint_sha256": "d0b66d9beb3e739a81691af6f4364e3a0efd988393ef9cb9bf35282aeaf72520",
+  "freeze_manifest_sha256": "0e3f6110a7f8521a193dda5e664429749bc8fa5d21efbcb95d578ed64264613b",
+  "evaluation_script_sha256": "7e3154b69c163eaff71c96408051f7d2470f18c2345012178d74f1d3f707cd47",
+  "protocol": {
+    "split": "test",
+    "expected_images": 3669,
+    "mode": "eval + torch.inference_mode",
+    "device": "cpu",
+    "batch_size": 32,
+    "num_workers": 0,
+    "cpu_threads": 4,
+    "seed": 42,
+    "shuffle": false,
+    "augmentation": false,
+    "decision": "argmax des deux logits ; égalité -> indice 0 (Chat)",
+    "confidence": "softmax, sans seuil de rejet ni calibration",
+    "human_correction": false,
+    "annotation_replay": false,
+    "majority_baseline_target_from_train": 1,
+    "metrics": [
+      "accuracy",
+      "precision_per_class",
+      "recall_per_class",
+      "f1_per_class",
+      "f1_macro",
+      "confusion_matrix"
+    ],
+    "selection_on_test": false
+  },
+  "completed_at_utc": "2026-11-21T21:15:42.102200+00:00",
+  "output_sha256": {
+    "classification_binaire_par_race.csv": "9c9d73ba28e6ce39322d0e2488503c95b87106add89e367883889b1f9d389e4f",
+    "erreurs.csv": "fc3f25524a9542676bf8deb2ca08cb254ef01ed03038fb580e7238c0fabde9b9",
+    "exemples_erreurs.csv": "4c366e2f57ed02b2257cadf188785262d009425db220d02552eaf6a3ca13b5f5",
+    "exemples_erreurs.png": "be77ea9ea686877be7837cfa3e13de4974cf5d7947778932a5c6ad5dccc899c0",
+    "matrice_confusion.csv": "46ca322b6faa52273908e76119aa1bbbde1de383f0d8d4da66670eb3a028128b",
+    "matrice_confusion_test.png": "4f1219172377e68de4cc4400873133dd381cbfa24422ad9cc96a4bfe092c885b",
+    "mesures_par_classe.csv": "642093d1166b92ba670885dc927e5344b2392e541aeed7d715d64e866a262944",
+    "predictions.csv": "47fe71be741b19b2fb88e1d45c7764a4d46ceff9b154f06a528c6e3410ea20ee",
+    "summary.json": "4354d8e356dc27b087ff12faaf812632afb920f3b4113fa20394b07a2550f4a3"
+  }
+}

@@ -98,3 +98,12 @@ d'une correction et généralisation par apprentissage. Les sorties IA brutes
 restent visibles pour ne pas transformer une correction humaine en succès
 automatique fictif. Voir `corrections_humaines.md` pour le stockage, l'export et
 la protection des partitions avant un futur réentraînement.
+
+
+## Évaluation finale réalisée
+
+La copie gelée a été évaluée sur le test officiel sans ajustement du modèle.
+Voir [evaluation_finale.md](evaluation_finale.md) : les calculs de précision,
+rappel et F1 y sont expliqués à partir de la vraie matrice de confusion.
+Le test est désormais consulté. La suite porte sur l'interprétation, le rapport
+final et la démonstration, en conservant les résultats obtenus.

@@ -1,0 +1,148 @@
+{
+  "schema_version": 1,
+  "freeze_id": "binary_final_v1",
+  "created_at_utc": "2026-11-21T20:58:24.208783+00:00",
+  "active_checkpoint": "models/refined_feedback_v1/best_model.pt",
+  "evaluation_checkpoint": "results/evaluation/binary_final_v1/best_model.pt",
+  "checkpoint_sha256": "d0b66d9beb3e739a81691af6f4364e3a0efd988393ef9cb9bf35282aeaf72520",
+  "architecture": "mobilenet_v3_small",
+  "class_names": [
+    "Chat",
+    "Chien"
+  ],
+  "selected_epoch": 3,
+  "preprocessing": {
+    "resize_short_side": 256,
+    "crop_size": 224,
+    "mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "std": [
+      0.229,
+      0.224,
+      0.225
+    ],
+    "color_mode": "RGB",
+    "orientation": "EXIF transpose"
+  },
+  "evaluation_transform": "ImageClassification(\n    crop_size=[224]\n    resize_size=[256]\n    mean=[0.485, 0.456, 0.406]\n    std=[0.229, 0.224, 0.225]\n    interpolation=InterpolationMode.BILINEAR\n)",
+  "training_settings": {
+    "epochs": 3,
+    "batch_size": 32,
+    "learning_rate": 0.0001,
+    "optimizer": "Adam",
+    "loss": "CrossEntropyLoss",
+    "seed": 42,
+    "cpu_threads": 4,
+    "device": "cpu",
+    "num_workers": 0,
+    "weights_source": "local_checkpoint",
+    "initial_checkpoint": "models/first_run/best_model.pt",
+    "initial_checkpoint_sha256": "114199dfce1451f01bc7733ec497c2fe820376d928a0009090d09d479bd8892f",
+    "preprocessing": "center_crop",
+    "feedback_examples": 1,
+    "training_images": 2945,
+    "feedback_manifest_sha256": "c76bebeec4e214f8deef6ee20a4195a0b3a49259dd853cdefd78955c9096c7d1",
+    "frozen_features_and_batchnorm": true,
+    "selection_criterion": "minimum validation loss",
+    "trainable_parameters": 592898,
+    "total_parameters": 1519906,
+    "partition_sha256": {
+      "train": "ffded2a6a2018c83656cd2cacf878488f26fd7ecc731daadca109a84ec0b7281",
+      "validation": "e97c8d1522fdbdab5e634b915b29e676abb73475666f35019f6a9d771ec88762"
+    },
+    "torch_version": "2.15.0",
+    "torchvision_version": "0.29.2",
+    "training_augmentation": {
+      "resize_short_side": 256,
+      "random_crop": 224,
+      "horizontal_flip_probability": 0.5
+    }
+  },
+  "validation_metrics": {
+    "loss": 0.02831861052402968,
+    "accuracy": 0.9904891304347826,
+    "f1_macro": 0.9890969193294775,
+    "images": 736,
+    "seconds": 26.880962584051304
+  },
+  "parameters": {
+    "total": 1519906,
+    "trainable": 592898
+  },
+  "evaluation_protocol": {
+    "split": "test",
+    "expected_images": 3669,
+    "mode": "eval + torch.inference_mode",
+    "device": "cpu",
+    "batch_size": 32,
+    "num_workers": 0,
+    "cpu_threads": 4,
+    "seed": 42,
+    "shuffle": false,
+    "augmentation": false,
+    "decision": "argmax des deux logits ; égalité -> indice 0 (Chat)",
+    "confidence": "softmax, sans seuil de rejet ni calibration",
+    "human_correction": false,
+    "annotation_replay": false,
+    "majority_baseline_target_from_train": 1,
+    "metrics": [
+      "accuracy",
+      "precision_per_class",
+      "recall_per_class",
+      "f1_per_class",
+      "f1_macro",
+      "confusion_matrix"
+    ],
+    "selection_on_test": false
+  },
+  "test_images_read_by_freeze": false,
+  "test_inference_performed": false,
+  "environment": {
+    "python": "3.11.18",
+    "platform": "macOS-27.0.1-arm64-arm-64bit",
+    "packages": {
+      "torch": "2.15.0",
+      "torchvision": "0.29.2",
+      "Pillow": "13.0.0",
+      "numpy": "2.4.6",
+      "pandas": "3.1.1",
+      "scikit-learn": "1.9.1"
+    }
+  },
+  "git_head_at_freeze": "e46901099058efb84561db6cb3835a5987c8f076",
+  "source_files_sha256": {
+    "config.py": "c54212754e67536a82e6417562558ef171c8688aedcb02816ffe795bd5ea711f",
+    "ianimaux/model.py": "c4f1cb543871393c1a271bca2392eec5635bf10362b2b8e1070e396025eb31e3",
+    "ianimaux/datasets.py": "f4b1e0c0036b2f5dfb911b0092be6c15c409a577a0f45db7f1a795ea5176a1f3",
+    "ianimaux/predict.py": "e3aae00cff281e2d6281ecd450fe8b1ce09a41282fd76226e651bde6ffcd0a3f",
+    "scripts/freeze_evaluation.py": "3170f4ab4fd690369f77ee11002289e1578cffc64d386685a5cfa79b4083df56",
+    "results/model_activation.json": "5cc03ba26c1e929e115410ce8f87755de7fcc7e7e724cbcb4b899428414ced7b",
+    "results/training/refined_feedback_v1/config.json": "1056d7331c99547fc843326a6ea9f1a07dfdc12328fa5396999a41bccda5538d",
+    "results/training/refined_feedback_v1/summary.json": "5aa3ea6c3ac5aaf380863328247387a06a350d7f5ea831dba755a2b921fff0e2",
+    "results/splits/summary.json": "e6a503c0f0f97a7e5b70939bf7adb7a183ebe90bb6055c4c0cf38090624a368c",
+    "requirements.txt": "3798a64808b190d3fe50a79007b9a178646994fc081c879a1c265dd48d8fc760",
+    "requirements-lock.txt": "4ee90c2b2e358e6896379a9438bd8eb52f4774c8e2248386de5876e71f6a0370"
+  },
+  "partition_sha256": {
+    "results/splits/train.csv": "ffded2a6a2018c83656cd2cacf878488f26fd7ecc731daadca109a84ec0b7281",
+    "results/splits/validation.csv": "e97c8d1522fdbdab5e634b915b29e676abb73475666f35019f6a9d771ec88762",
+    "results/splits/test.csv": "0c9e91ceb6708794c732dd79eecd7b6c9f51999deb3d8e5038a2001b60769881"
+  },
+  "frozen_files_sha256": {
+    "best_model.pt": "d0b66d9beb3e739a81691af6f4364e3a0efd988393ef9cb9bf35282aeaf72520",
+    "snapshot/config.py": "c54212754e67536a82e6417562558ef171c8688aedcb02816ffe795bd5ea711f",
+    "snapshot/requirements.txt": "3798a64808b190d3fe50a79007b9a178646994fc081c879a1c265dd48d8fc760",
+    "snapshot/requirements-lock.txt": "4ee90c2b2e358e6896379a9438bd8eb52f4774c8e2248386de5876e71f6a0370",
+    "snapshot/ianimaux/predict.py": "e3aae00cff281e2d6281ecd450fe8b1ce09a41282fd76226e651bde6ffcd0a3f",
+    "snapshot/ianimaux/datasets.py": "f4b1e0c0036b2f5dfb911b0092be6c15c409a577a0f45db7f1a795ea5176a1f3",
+    "snapshot/ianimaux/model.py": "c4f1cb543871393c1a271bca2392eec5635bf10362b2b8e1070e396025eb31e3",
+    "snapshot/results/model_activation.json": "5cc03ba26c1e929e115410ce8f87755de7fcc7e7e724cbcb4b899428414ced7b",
+    "snapshot/results/training/refined_feedback_v1/summary.json": "5aa3ea6c3ac5aaf380863328247387a06a350d7f5ea831dba755a2b921fff0e2",
+    "snapshot/results/training/refined_feedback_v1/config.json": "1056d7331c99547fc843326a6ea9f1a07dfdc12328fa5396999a41bccda5538d",
+    "snapshot/results/splits/summary.json": "e6a503c0f0f97a7e5b70939bf7adb7a183ebe90bb6055c4c0cf38090624a368c",
+    "snapshot/scripts/freeze_evaluation.py": "3170f4ab4fd690369f77ee11002289e1578cffc64d386685a5cfa79b4083df56"
+  }
+}

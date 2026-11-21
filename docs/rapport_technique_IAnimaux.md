@@ -4,11 +4,17 @@
 **Cours :** INF1853 — Introduction à l’intelligence artificielle, UQO  
 **Session :** automne 2026  
 **Organisation :** projet individuel  
-**Date de l’état d’avancement :** 19 novembre 2026  
-**Version :** 1.7 — Classification, corrections et téléchargement ZIP fonctionnels  
+**Date de l’état d’avancement :** 21 novembre 2026<br>
+**Version :** 1.9 — Évaluation finale du modèle binaire réalisée<br>
 **Remise :** 8 décembre 2026 — **Présentation :** 9 décembre 2026
 
 ## Résumé
+
+**État au 21 novembre 2026 :** le prototype binaire est fonctionnel et son
+évaluation finale est réalisée : **98,42 % d'exactitude et 98,18 % de F1 macro**
+sur 3 669 images de test (58 erreurs). Les sections précédentes retracent les
+étapes de développement ; les résultats finaux figurent en section 20.
+
 
 IAnimaux vise à automatiser le classement de photographies de chats et de chiens
 pour un refuge animalier. L’application prévue utilisera un réseau de neurones
@@ -542,7 +548,7 @@ sources restent préservées.
 
 ## 11. État fonctionnel et prochaines étapes
 
-| Élément | État au 19 novembre 2026 |
+| Élément | État au 21 novembre 2026 |
 |---|---|
 | Cadrage, nom IAnimaux et périmètre individuel | Réalisé |
 | Structure, dépôt Git local et environnement | Réalisé |
@@ -553,12 +559,12 @@ sources restent préservées.
 | Partitions finales entraînement/validation et chargement | Réalisés et vérifiés |
 | Adaptation binaire, premier entraînement et sauvegarde | Réalisés et rechargement vérifié |
 | Mesures de validation et courbes d’apprentissage | Réalisées |
-| Évaluation finale sur test et analyse approfondie | À réaliser |
+| Évaluation finale sur test et première analyse des erreurs | Réalisées ; discussion à approfondir dans le rapport final |
 | Import multiple, prédictions, statistiques et aperçus | Réalisés |
 | Mémoire des corrections et export d’exemples humains | Réalisés, sans réentraînement automatique |
 | Organisation des copies et téléchargement ZIP | Réalisés et vérifiés dans Chrome |
 | Rapport académique final et démonstration | À finaliser après les expériences |
-| Reconnaissance des races | Facultative, dernière priorité |
+| Reconnaissance des races | Retirée du périmètre après essai |
 
 ### 11.1 Séparation réalisée des données
 
@@ -606,9 +612,9 @@ ultérieur fondé sur ses résultats. Les exemples visuels actuels proviennent
 uniquement de `trainval` ; seules des statistiques et vérifications d’intégrité
 ont été effectuées sur le test.
 
-### 11.2 Évaluation future
+### 11.2 Protocole d’évaluation prévu, maintenant exécuté
 
-L’évaluation comprendra l’exactitude, la précision, le rappel et le F1 par classe,
+Ce protocole a été exécuté le 21 novembre 2026 (section 20). Il prévoyait l’exactitude, la précision, le rappel et le F1 par classe,
 le F1 macro, une matrice de confusion et le temps de traitement. Les courbes
 d’entraînement et de validation aideront à identifier un éventuel surapprentissage.
 Une référence prédisant toujours la classe majoritaire sera incluse. Si un seuil
@@ -1076,6 +1082,71 @@ avec une [capture du bouton](../results/interface/apercu_telechargement_zip.png)
 Les performances du modèle ne sont pas modifiées par cette fonctionnalité et
 le test indépendant reste réservé à l'évaluation finale.
 
+## 19. Version fixée avant l’évaluation finale
+
+Le 21 novembre 2026, après retrait de l'estimation des races, le modèle binaire
+`refined_feedback_v1` est conservé sous l'identifiant **binary_final_v1**.
+La copie des poids destinée à l'évaluation, le manifeste et les sources sont
+archivés dans `results/evaluation/binary_final_v1/`. Le SHA-256 correspond au
+modèle actif enregistré lors de son activation :
+`d0b66d9beb3e739a81691af6f4364e3a0efd988393ef9cb9bf35282aeaf72520`.
+
+Le manifeste conserve l'époque sélectionnée (3), la configuration d'entraînement,
+le prétraitement central 224 × 224, les versions logicielles, les empreintes du
+code et des partitions. Il fixe la décision par argmax, sans correction humaine,
+sans seuil de rejet et sans augmentation, ainsi que la référence majoritaire
+Chien déterminée sur l'entraînement. Le futur calcul utilisera le CPU, quatre
+threads et des lots de 32. Les 99,05 % d'exactitude connus restent des résultats
+de validation, pas de test.
+
+Le script `scripts/freeze_evaluation.py --verify` contrôle la cohérence de ces
+éléments. Une nouvelle création refuse d'écraser le gel existant. Les **50 tests
+passent**, dont trois contrôles d'altération des poids, des sources et des
+partitions. Aucune image de test n'est chargée et aucune prédiction n'est produite
+par cette étape : seuls les octets du CSV de test sont lus pour son empreinte.
+L'évaluation finale sur 3 669 images reste à réaliser. Voir le
+[protocole détaillé](gel_version_evaluation.md).
+
+## 20. Évaluation finale sur le test indépendant
+
+Le 21 novembre 2026, la copie gelée binary_final_v1 est évaluée sur les 3 669
+images du test officiel, après vérification des empreintes des images et du gel.
+Le modèle et les paramètres restent inchangés. Aucun seuil n'est ajusté sur le
+test et aucune correction humaine ne remplace les décisions. Le calcul utilise
+le CPU, quatre threads, des lots de 32, le mode évaluation et aucune augmentation.
+
+| Mesure | Modèle | Référence toujours Chien |
+| --- | --- | --- |
+| Exactitude | 98,42 % | 67,76 % |
+| F1 macro | 98,18 % | 40,39 % |
+
+Le modèle classe correctement **3611 images** et commet **58 erreurs**.
+
+| Classe | Précision | Rappel | F1 | Effectif |
+| --- | --- | --- | --- | --- |
+| Chat | 98,79 % | 96,28 % | 97,52 % | 1183 |
+| Chien | 98,25 % | 99,44 % | 98,84 % | 2486 |
+
+La matrice, avec classes réelles en lignes et prédites en colonnes Chat/Chien,
+est **[[1139, 44], [14, 2472]]**. Elle permet de calculer les métriques et de distinguer les deux
+sens d'erreur. La perte moyenne est 0,04269. Le traitement par lots a pris
+138,1 secondes sur la machine locale, hors vérification
+d'intégrité et génération des figures ; cela ne mesure pas la latence sur Cloud.
+
+Les prédictions individuelles, les erreurs et les graphiques sont enregistrés
+dans `results/evaluation/binary_final_v1/test_results/`, avec leurs empreintes.
+Une planche sélectionne trois erreurs très confiantes et trois peu confiantes,
+sans prétendre représenter toutes les erreurs. Un score élevé ne garantit pas
+la justesse. Les performances sur Oxford ne garantissent pas celles sur les
+photos d'un refuge. Le test est maintenant consulté et ne doit plus servir à
+choisir les paramètres. Le script d'évaluation refuse d'écraser les résultats.
+
+Les **55 tests passent**, y compris les calculs sur un exemple connu et les
+contrôles de couverture et d'intégrité des résultats finaux. Le
+[guide d'évaluation](evaluation_finale.md) explique les calculs réels, montre les
+figures et détaille les limites. Le présent rapport d'avancement reste à condenser
+au format académique imposé de dix pages, références incluses.
+
 ## Références
 
 1. Parkhi, O. M., Vedaldi, A., Zisserman, A. et Jawahar, C. V. (2012).
@@ -1097,6 +1168,6 @@ le test indépendant reste réservé à l'évaluation finale.
    [exemples_normalisation.csv](../results/exploration/exemples_normalisation.csv).
 
 Les résultats chiffrés de ce rapport proviennent des fichiers locaux produits et
-contrôlés le 19 novembre 2026. Les liens documentaires sont des références
+contrôlés les 19 et 21 novembre 2026. Les liens documentaires sont des références
 évolutives ; les versions exécutées sont celles consignées dans le fichier de
 dépendances figées.

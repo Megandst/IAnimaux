@@ -337,3 +337,33 @@ doit être déclarée ; chaque contribution doit être comprise et vérifiée.
 - [Oxford-IIIT Pet](https://www.robots.ox.ac.uk/~vgg/data/pets/)
 - [MobileNetV3 Small — Torchvision](https://docs.pytorch.org/vision/stable/models/generated/torchvision.models.mobilenet_v3_small.html)
 - [Installation de Streamlit](https://docs.streamlit.io/get-started/installation/command-line)
+
+## Version fixée pour l'évaluation finale
+
+Le modèle binaire actif est conservé sous **binary_final_v1**, avec copie des
+poids, paramètres, code pertinent et empreintes SHA-256 dans
+`results/evaluation/binary_final_v1/`. Aucune image de test n'a été chargée par
+cette étape de gel. L'évaluation finale a ensuite été réalisée ; voir les résultats ci-dessous.
+
+```bash
+python scripts/freeze_evaluation.py --verify
+```
+
+Voir le [protocole de gel](docs/gel_version_evaluation.md). La copie conservée
+servira à l'évaluation ; l'application continue à utiliser son modèle actif.
+
+
+## Évaluation finale réalisée
+
+La copie gelée a été évaluée sur les **3 669 images officielles de test** :
+**98,42 % d'exactitude**, **98,18 % de F1 macro**,
+**58 erreurs**, contre **67,76 % d'exactitude** pour la
+référence toujours Chien. Aucun réentraînement ni correction humaine appliquée.
+
+Les [résultats et calculs détaillés](docs/evaluation_finale.md) comprennent la
+matrice de confusion, les mesures par classe et des exemples d'erreurs.
+Les fichiers sources des mesures sont dans
+`results/evaluation/binary_final_v1/test_results/`. Les **55 tests passent**.
+Le script `scripts/evaluate_final.py` refuse d'écraser ces résultats ; il n'est
+pas nécessaire de le relancer. Le test a maintenant été consulté et ne doit
+plus servir à sélectionner ou régler le modèle.
