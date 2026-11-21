@@ -1,0 +1,23 @@
+{
+  "browser": "Chrome headless",
+  "actual_download_completed": true,
+  "archive_filename": "IAnimaux_photos_classees.zip",
+  "archive_bytes": 62550,
+  "folders": [
+    "chat/",
+    "chien/"
+  ],
+  "checks": [
+    {
+      "archive_path": "chat/images (15).jpeg",
+      "original_sha256": "e9cc195eb942fa46ded1d50d2c27b5e9e8051ceafdb9e5706fc3d83e2d7b55e3",
+      "original_bytes_preserved": true
+    },
+    {
+      "archive_path": "chien/images (1).jpeg",
+      "original_sha256": "4abeb0d9ab45d505a7447b2552222f46323a5aec093aa80146b376723c078e4c",
+      "original_bytes_preserved": true
+    }
+  ],
+  "tests_passed": 47
+}

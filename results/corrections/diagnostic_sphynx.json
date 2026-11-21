@@ -1,0 +1,17 @@
+{
+  "filename": "images (15).jpeg",
+  "image_sha256": "e9cc195eb942fa46ded1d50d2c27b5e9e8051ceafdb9e5706fc3d83e2d7b55e3",
+  "model_sha256": "114199dfce1451f01bc7733ec497c2fe820376d928a0009090d09d479bd8892f",
+  "raw_model_prediction": "Chien",
+  "raw_model_confidence": 0.5406652688980103,
+  "p_chat": 0.45933476090431213,
+  "p_chien": 0.5406652688980103,
+  "human_category": "Chat",
+  "human_note": "Sphynx — catégorie Chat confirmée dans la conversation du 19 novembre 2026.",
+  "source_split": "external",
+  "eligible_for_future_training_review": true,
+  "model_weights_unchanged": true,
+  "test_used": false,
+  "observation": "Le recadrage central retire les yeux et les oreilles de cette photo verticale ; facteur possible, pas cause unique démontrée.",
+  "user_report": "Une erreur signalée sur 19 photos essayées ; observation exploratoire, pas une évaluation indépendante annotée."
+}

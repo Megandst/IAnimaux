@@ -1,0 +1,46 @@
+{
+  "seed": 42,
+  "validation_fraction_of_trainval": 0.2,
+  "stratify_by": "class_id (race)",
+  "counts": {
+    "train": 2944,
+    "validation": 736,
+    "test": 3669
+  },
+  "species_counts": {
+    "train": {
+      "Chien": 1994,
+      "Chat": 950
+    },
+    "validation": {
+      "Chien": 498,
+      "Chat": 238
+    },
+    "test": {
+      "Chien": 2486,
+      "Chat": 1183
+    }
+  },
+  "breeds_per_split": {
+    "train": 37,
+    "validation": 37,
+    "test": 37
+  },
+  "official_test_members_preserved": true,
+  "overlapping_image_ids": 0,
+  "overlapping_pixel_hashes": 0,
+  "all_current_file_hashes_verified": true,
+  "manifest_sha256": "e205a77273f1069b22ac9496953ba85f589eb831520f6ee55f93b5491fa41688",
+  "partition_sha256": {
+    "train": "ffded2a6a2018c83656cd2cacf878488f26fd7ecc731daadca109a84ec0b7281",
+    "validation": "e97c8d1522fdbdab5e634b915b29e676abb73475666f35019f6a9d771ec88762",
+    "test": "0c9e91ceb6708794c732dd79eecd7b6c9f51999deb3d8e5038a2001b60769881"
+  },
+  "sklearn_version": "1.9.1",
+  "pandas_version": "3.1.1",
+  "label_mapping": {
+    "0": "Chat",
+    "1": "Chien"
+  },
+  "training_majority_target": 1
+}

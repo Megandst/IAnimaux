@@ -1,0 +1,61 @@
+{
+  "train": {
+    "dataset_size": 2944,
+    "batch_shape": [
+      16,
+      3,
+      224,
+      224
+    ],
+    "targets": [
+      0,
+      1,
+      1,
+      1,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      0,
+      1,
+      0,
+      1,
+      1,
+      0
+    ]
+  },
+  "validation": {
+    "dataset_size": 736,
+    "batch_shape": [
+      16,
+      3,
+      224,
+      224
+    ],
+    "targets": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "repeated_image_identical": true
+  },
+  "test": {
+    "dataset_size": 3669,
+    "images_loaded": 0
+  }
+}

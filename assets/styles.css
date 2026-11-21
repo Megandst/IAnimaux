@@ -1,0 +1,43 @@
+/* IAnimaux: local, pastel presentation. No external fonts or scripts. */
+.stApp { background: #fbf8ff; color: #352d47; }
+[data-testid="stMainBlockContainer"] { max-width: 1180px; padding-top: 4.75rem; padding-bottom: 3rem; }
+h1, h2, h3 { font-family: "Avenir Next", "Trebuchet MS", sans-serif; letter-spacing: -.035em; }
+.st-key-brand_header {
+  background: linear-gradient(115deg, #eee5ff 0%, #f8edfa 55%, #fff0e6 100%);
+  border: 1px solid #e8dbf3; border-radius: 30px; padding: 1.8rem 2.3rem;
+  margin-bottom: .7rem; overflow: hidden;
+}
+.st-key-brand_header h1 { font-size: clamp(2.5rem, 5vw, 3.7rem); font-weight: 800; line-height: 1.1; padding-top: .4rem; padding-bottom: .3rem; }
+.st-key-brand_header [data-testid="stImage"] { max-width: 350px; margin-inline: auto; }
+.brand-badge { display: inline-block; padding: .4rem .8rem; background: #ffffffb8; border: 1px solid #ffffff; border-radius: 100px; color: #635080; font: 700 .72rem/1.4 sans-serif; letter-spacing: .09em; }
+.hero-line { font-size: 1.2rem; line-height: 1.5; font-weight: 650; color: #4b3d61; max-width: 420px; margin: .2rem 0 .7rem; }
+.flow-steps { display: flex; gap: 1rem; list-style: none; margin: .4rem 0 1.4rem; padding: 0; flex-wrap: wrap; }
+.flow-steps li { display: flex; align-items: center; gap: .6rem; color: #655b75; font-size: .9rem; flex: 1; min-width: 180px; }
+.flow-steps span { display: grid; place-items: center; width: 29px; height: 29px; border-radius: 50%; background: #ebe2fa; color: #65508d; font-size: .75rem; font-weight: 750; flex-shrink: 0; }
+.st-key-import_panel { background: #ffffff; border-radius: 24px; border-color: #e8dff1; padding: 1.4rem 1.6rem; box-shadow: 0 8px 30px #51416c06; }
+.st-key-import_panel h3 { font-size: 1.3rem; }
+.st-key-export_panel { background: linear-gradient(110deg, #f0e9fc, #f0f8f3); border-radius: 22px; padding: 1.3rem 1.5rem; border-color: #e1d7ee; }
+[data-testid="stFileUploaderDropzone"] { background: #faf6ff; border: 2px dashed #cdbde8; border-radius: 18px; padding: 1.4rem; }
+[data-testid="stFileUploaderDropzone"] button { background: white; border-radius: 100px; }
+button[kind="primary"] { border-radius: 100px; font-weight: 700; min-height: 3rem; box-shadow: 0 5px 14px #7460c820; }
+button:focus-visible, input:focus-visible { outline: 3px solid #9272d7 !important; outline-offset: 3px; }
+.st-key-stat_0, .st-key-stat_1, .st-key-stat_2, .st-key-stat_3 { border-radius: 20px; padding: 1rem 1.2rem; border: 1px solid #ffffff; }
+.st-key-stat_0 { background: #eee5ff; }
+.st-key-stat_1 { background: #ffeadf; }
+.st-key-stat_2 { background: #e3f2ea; }
+.st-key-stat_3 { background: #f9e6ed; }
+[data-testid="stMetricValue"] { color: #40344f; font-weight: 750; }
+[data-testid="stMetricLabel"] { color: #5b506a; }
+[data-testid="stDataFrame"] { border: 1px solid #e8dff0; border-radius: 16px; overflow: hidden; }
+[data-testid="stExpander"] { background: #fff; border-radius: 18px; }
+[class*="st-key-photo_card_"] { background: #fff; border-radius: 20px; border-color: #e8dff0; overflow: hidden; }
+[class*="st-key-photo_card_"] [data-testid="stImage"] img { height: 210px !important; object-fit: contain; background: #faf7fc; border-radius: 12px; }
+.footer-note { margin-top: 1.6rem; text-align: center; color: #766b85; font-size: .8rem; }
+@media (max-width: 640px) {
+  [data-testid="stMainBlockContainer"] { padding-top: 4.5rem; padding-inline: 1rem; }
+  .st-key-brand_header { border-radius: 22px; padding: 1.3rem; }
+  .st-key-brand_header [data-testid="stImage"] { max-width: 180px; }
+  .st-key-import_panel { padding: 1rem; }
+  .flow-steps { gap: .6rem; }
+  .flow-steps li { min-width: 100%; }
+}

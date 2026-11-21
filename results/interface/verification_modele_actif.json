@@ -1,0 +1,16 @@
+{
+  "filename": "images (15).jpeg",
+  "table_result": {
+    "Fichier": "images (15).jpeg",
+    "Prédiction IA": "Chat",
+    "Confiance IA": "65,4%",
+    "Catégorie retenue": "Chat",
+    "Origine": "Modèle",
+    "Statut": "Classée",
+    "Détail": ""
+  },
+  "human_annotation_automatically_applied": false,
+  "independent_evaluation": false,
+  "reason": "Photo de développement utilisée au réentraînement.",
+  "model": "refined_feedback_v1"
+}

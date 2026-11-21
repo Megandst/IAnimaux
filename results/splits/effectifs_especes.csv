@@ -1,0 +1,7 @@
+split,species,count
+test,Chat,1183
+test,Chien,2486
+train,Chat,950
+train,Chien,1994
+validation,Chat,238
+validation,Chien,498

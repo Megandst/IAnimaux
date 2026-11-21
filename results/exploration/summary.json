@@ -1,0 +1,26 @@
+{
+  "annotated_images": 7349,
+  "valid_images": 7349,
+  "invalid_images": 0,
+  "breeds": 37,
+  "species_counts": {
+    "Chien": 4978,
+    "Chat": 2371
+  },
+  "official_split_counts": {
+    "trainval": 3680,
+    "test": 3669
+  },
+  "original_modes": {
+    "RGB": 7346,
+    "RGBA": 3
+  },
+  "exact_duplicate_groups": 0,
+  "images_in_exact_duplicate_groups": 0,
+  "cross_official_split_duplicate_groups": 0,
+  "label_mapping": {
+    "0": "Chat",
+    "1": "Chien"
+  },
+  "final_partitions_created": false
+}

@@ -1,0 +1,97 @@
+{
+  "purpose": "Exemples pédagogiques artificiels ; ce ne sont pas les performances du modèle.",
+  "convolution": {
+    "image": [
+      [
+        1.0,
+        2.0,
+        3.0
+      ],
+      [
+        4.0,
+        5.0,
+        6.0
+      ],
+      [
+        7.0,
+        8.0,
+        9.0
+      ]
+    ],
+    "filter": [
+      [
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        -1.0
+      ]
+    ],
+    "output": [
+      [
+        -4.0,
+        -4.0
+      ],
+      [
+        -4.0,
+        -4.0
+      ]
+    ],
+    "first_cell_calculation": "1*1 + 2*0 + 4*0 + 5*(-1) = -4"
+  },
+  "normalization": {
+    "red_pixel": 150,
+    "scaled": 0.5882352941176471,
+    "normalized": 0.4508091446185462
+  },
+  "softmax_and_loss": {
+    "logits": [
+      [
+        2.0,
+        1.0
+      ]
+    ],
+    "target": "Chat",
+    "probabilities": [
+      [
+        0.7310585975646973,
+        0.2689414322376251
+      ]
+    ],
+    "cross_entropy": 0.31326165795326233
+  },
+  "toy_gradient_step": {
+    "gradient": [
+      [
+        -0.26894140243530273,
+        0.2689414322376251
+      ]
+    ],
+    "learning_rate": 0.1,
+    "updated_logits": [
+      [
+        2.0268940925598145,
+        0.9731058478355408
+      ]
+    ],
+    "updated_loss": 0.2990778982639313,
+    "note": "Mise à jour pédagogique des logits ; le réseau réel ajuste les poids du classificateur avec Adam."
+  },
+  "artificial_metrics": {
+    "confusion_matrix": [
+      [
+        8,
+        1
+      ],
+      [
+        2,
+        9
+      ]
+    ],
+    "accuracy": 0.85,
+    "precision_chat": 0.8,
+    "recall_chat": 0.8888888888888888,
+    "f1_chat": 0.8421052631578948
+  }
+}

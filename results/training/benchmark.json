@@ -1,0 +1,47 @@
+{
+  "settings": {
+    "epochs": 3,
+    "batch_size": 32,
+    "learning_rate": 0.001,
+    "optimizer": "Adam",
+    "loss": "CrossEntropyLoss",
+    "seed": 42,
+    "cpu_threads": 4,
+    "device": "cpu",
+    "num_workers": 0,
+    "weights_source": "MobileNet_V3_Small_Weights.IMAGENET1K_V1",
+    "frozen_features_and_batchnorm": true,
+    "selection_criterion": "minimum validation loss",
+    "trainable_parameters": 592898,
+    "total_parameters": 1519906,
+    "partition_sha256": {
+      "train": "ffded2a6a2018c83656cd2cacf878488f26fd7ecc731daadca109a84ec0b7281",
+      "validation": "e97c8d1522fdbdab5e634b915b29e676abb73475666f35019f6a9d771ec88762"
+    },
+    "torch_version": "2.15.0",
+    "torchvision_version": "0.29.2",
+    "training_augmentation": {
+      "resize_short_side": 256,
+      "random_crop": 224,
+      "horizontal_flip_probability": 0.5
+    }
+  },
+  "train": {
+    "loss": 0.5056808491547903,
+    "accuracy": 0.625,
+    "f1_macro": 0.536231884057971,
+    "images": 96,
+    "seconds": 3.7016802500002086
+  },
+  "validation": {
+    "loss": 0.6488810479640961,
+    "accuracy": 0.59375,
+    "f1_macro": 0.37254901960784315,
+    "images": 64,
+    "seconds": 2.2865203329129145
+  },
+  "estimated_seconds_per_epoch": 139.81317816183824,
+  "estimated_total_seconds": 419.43953448551474,
+  "purpose": "Contrôle de durée sur quelques lots ; les scores ne mesurent pas la performance du modèle.",
+  "checkpoint_saved": false
+}

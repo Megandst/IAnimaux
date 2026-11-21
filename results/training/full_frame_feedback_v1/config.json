@@ -1,0 +1,33 @@
+{
+  "epochs": 3,
+  "batch_size": 32,
+  "learning_rate": 0.0001,
+  "optimizer": "Adam",
+  "loss": "CrossEntropyLoss",
+  "seed": 42,
+  "cpu_threads": 4,
+  "device": "cpu",
+  "num_workers": 0,
+  "weights_source": "local_checkpoint",
+  "initial_checkpoint": "models/first_run/best_model.pt",
+  "initial_checkpoint_sha256": "114199dfce1451f01bc7733ec497c2fe820376d928a0009090d09d479bd8892f",
+  "preprocessing": "letterbox",
+  "feedback_examples": 1,
+  "training_images": 2945,
+  "feedback_manifest_sha256": "c76bebeec4e214f8deef6ee20a4195a0b3a49259dd853cdefd78955c9096c7d1",
+  "frozen_features_and_batchnorm": true,
+  "selection_criterion": "minimum validation loss",
+  "trainable_parameters": 592898,
+  "total_parameters": 1519906,
+  "partition_sha256": {
+    "train": "ffded2a6a2018c83656cd2cacf878488f26fd7ecc731daadca109a84ec0b7281",
+    "validation": "e97c8d1522fdbdab5e634b915b29e676abb73475666f35019f6a9d771ec88762"
+  },
+  "torch_version": "2.15.0",
+  "torchvision_version": "0.29.2",
+  "training_augmentation": {
+    "fit_inside_square": 224,
+    "horizontal_flip_probability": 0.5,
+    "random_crop": false
+  }
+}

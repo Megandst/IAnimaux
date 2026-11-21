@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 340" role="img" aria-labelledby="title desc">
+  <title id="title">Un chat et un chien pour IAnimaux</title>
+  <desc id="desc">Deux compagnons souriants dessinés dans une palette pastel lavande, pêche et menthe.</desc>
+  <ellipse cx="280" cy="304" rx="211" ry="18" fill="#D8CEE9" opacity=".35"/>
+  <circle cx="164" cy="172" r="119" fill="#E5DCFB"/>
+  <circle cx="393" cy="177" r="119" fill="#FFE4D9"/>
+  <path d="m54 228 8 14 16 3-12 11 2 16-14-8-14 8 2-16-12-11 16-3z" fill="#BFE2D5"/>
+  <path d="m286 45 5 10 11 2-8 8 2 11-10-5-10 5 2-11-8-8 11-2z" fill="#F3CB76"/>
+  <g fill="#B9AEDF" transform="rotate(18 472 53)">
+    <ellipse cx="472" cy="61" rx="14" ry="11"/>
+    <ellipse cx="454" cy="43" rx="6" ry="8"/>
+    <ellipse cx="469" cy="36" rx="6" ry="8"/>
+    <ellipse cx="484" cy="39" rx="6" ry="8"/>
+    <ellipse cx="495" cy="51" rx="6" ry="8"/>
+  </g>
+  <g stroke="#4B3D61" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M90 157 82 91q-1-12 9-5l43 29q31-12 61 0l40-29q10-7 9 6l-6 68q13 19 13 46c0 49-36 78-88 78s-88-29-88-77q0-28 15-50z" fill="#FFF8EB"/>
+    <path d="m96 108 6 39 23-25z" fill="#EAC4D6" stroke="none"/>
+    <path d="m229 107-5 41-22-25z" fill="#EAC4D6" stroke="none"/>
+    <path d="m137 119 9 17m17-20v19m18-17-9 17" stroke="#D9C6AA"/>
+    <path d="M129 181q7-9 14 0m42 0q7-9 14 0" fill="none"/>
+    <path d="m156 203 8 6 8-6z" fill="#D99BAF" stroke="#D99BAF"/>
+    <path d="M164 211v7m0 0q-10 11-19 1m19-1q10 11 19 1" fill="none" stroke-width="3.5"/>
+    <path d="m110 203-31-6m33 19-32 4m137-17 31-6m-33 19 32 4" fill="none" stroke-width="3"/>
+    <ellipse cx="119" cy="205" rx="12" ry="7" fill="#F0C0CD" stroke="none" opacity=".65"/>
+    <ellipse cx="209" cy="205" rx="12" ry="7" fill="#F0C0CD" stroke="none" opacity=".65"/>
+  </g>
+  <g stroke="#4B3D61" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M334 125q-37-4-43 33l-5 53q-1 26 25 25l34-30z" fill="#DDB89C"/>
+    <path d="M452 125q37-4 43 33l5 53q1 26-25 25l-34-30z" fill="#DDB89C"/>
+    <path d="M322 165q0-60 71-60t71 60v48q-1 69-71 69t-71-69z" fill="#FFF8EB"/>
+    <path d="M333 153q0-34 28-37 24 3 25 32-2 25-24 31-22 1-29-26z" fill="#E8C6AD" stroke="none"/>
+    <circle cx="365" cy="182" r="5.5" fill="#4B3D61" stroke="none"/>
+    <circle cx="422" cy="182" r="5.5" fill="#4B3D61" stroke="none"/>
+    <path d="M354 165q10-8 21-1m37 0q10-7 20 0" fill="none" stroke-width="3"/>
+    <path d="M378 205q15-10 30 0-2 12-15 13-13-1-15-13z" fill="#4B3D61"/>
+    <path d="M393 219v12m0 0q-14 12-27 0m27 0q14 12 27 0" fill="none" stroke-width="3.5"/>
+    <path d="M382 238v10q1 16 12 16t12-16v-10q-11 8-24 0z" fill="#ECAABD" stroke-width="3"/>
+    <path d="M394 245v9" stroke="#C87E96" stroke-width="2"/>
+  </g>
+  <circle cx="300" cy="282" r="11" fill="#C5E7DA"/>
+  <circle cx="62" cy="102" r="6" fill="#EAC4D6"/>
+</svg>

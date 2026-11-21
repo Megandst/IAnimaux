@@ -1,0 +1,21 @@
+{
+  "theme": "Ludique : lavande, pêche et menthe",
+  "desktop_viewport": [
+    1440,
+    1180
+  ],
+  "mobile_viewport": [
+    390,
+    844
+  ],
+  "browser": "Chrome headless",
+  "imported_photos": 2,
+  "classification_completed": true,
+  "mobile_horizontal_page_overflow": false,
+  "screenshots": [
+    "apercu_pastel_ordinateur.png",
+    "apercu_pastel_resultats.png",
+    "apercu_pastel_mobile.png"
+  ],
+  "unit_and_integration_tests_passed": 40
+}

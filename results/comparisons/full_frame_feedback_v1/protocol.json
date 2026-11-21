@@ -1,0 +1,18 @@
+{
+  "baseline": "first_run",
+  "candidate": "full_frame_feedback_v1",
+  "training_data": "2944 Oxford train + 1 correction externe explicitement validée",
+  "validation_data": "736 images officielles de validation, dont 20 Sphynx",
+  "changes": [
+    "letterbox sans recadrage",
+    "poursuite entraînement classificateur depuis first_run",
+    "ajout de 1 correction humaine"
+  ],
+  "promotion_rules": {
+    "macro_f1_not_lower": true,
+    "overall_accuracy_not_lower": true,
+    "sphynx_recall_strictly_higher": true
+  },
+  "test_used": false,
+  "limitation": "Plusieurs changements simultanés ; pas d’attribution isolée de l’effet de la correction. Le contrôle avant entraînement mesure le changement de prétraitement seul."
+}

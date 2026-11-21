@@ -1,0 +1,19 @@
+{
+  "checks": [
+    {
+      "image_id": "Abyssinian_10",
+      "source": "validation",
+      "category": "Chat",
+      "confidence": 0.9994193315505981,
+      "matches_saved_validation_prediction": true
+    },
+    {
+      "image_id": "american_bulldog_103",
+      "source": "validation",
+      "category": "Chien",
+      "confidence": 1.0,
+      "matches_saved_validation_prediction": true
+    }
+  ],
+  "test_used": false
+}

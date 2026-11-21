@@ -1,0 +1,145 @@
+{
+  "baseline_name": "first_run",
+  "candidate_name": "full_frame_feedback_v1",
+  "baseline": {
+    "images": 736,
+    "accuracy": 0.9823369565217391,
+    "f1_macro": 0.9797060688780435,
+    "log_loss": 0.04034330790861105,
+    "sphynx": {
+      "correct": 17,
+      "images": 20,
+      "recall": 0.85
+    },
+    "classification_report": {
+      "Chat": {
+        "precision": 0.9828326180257511,
+        "recall": 0.9621848739495799,
+        "f1-score": 0.9723991507430998,
+        "support": 238.0
+      },
+      "Chien": {
+        "precision": 0.9821073558648111,
+        "recall": 0.9919678714859438,
+        "f1-score": 0.987012987012987,
+        "support": 498.0
+      },
+      "accuracy": 0.9823369565217391,
+      "macro avg": {
+        "precision": 0.9824699869452811,
+        "recall": 0.9770763727177618,
+        "f1-score": 0.9797060688780435,
+        "support": 736.0
+      },
+      "weighted avg": {
+        "precision": 0.982341883574463,
+        "recall": 0.9823369565217391,
+        "f1-score": 0.9822873171322355,
+        "support": 736.0
+      }
+    }
+  },
+  "candidate": {
+    "images": 736,
+    "accuracy": 0.9728260869565217,
+    "f1_macro": 0.9691521019321849,
+    "log_loss": 0.06193549758269085,
+    "sphynx": {
+      "correct": 19,
+      "images": 20,
+      "recall": 0.95
+    },
+    "classification_report": {
+      "Chat": {
+        "precision": 0.9467213114754098,
+        "recall": 0.9705882352941176,
+        "f1-score": 0.9585062240663901,
+        "support": 238.0
+      },
+      "Chien": {
+        "precision": 0.9857723577235772,
+        "recall": 0.9738955823293173,
+        "f1-score": 0.9797979797979798,
+        "support": 498.0
+      },
+      "accuracy": 0.9728260869565217,
+      "macro avg": {
+        "precision": 0.9662468345994935,
+        "recall": 0.9722419088117175,
+        "f1-score": 0.9691521019321849,
+        "support": 736.0
+      },
+      "weighted avg": {
+        "precision": 0.973144437877023,
+        "recall": 0.9728260869565217,
+        "f1-score": 0.9729128740043408,
+        "support": 736.0
+      }
+    }
+  },
+  "new_preprocessing_before_retraining": {
+    "images": 736,
+    "accuracy": 0.96875,
+    "f1_macro": 0.964410581797005,
+    "log_loss": 0.0879961795648518,
+    "sphynx": {
+      "correct": 19,
+      "images": 20,
+      "recall": 0.95
+    },
+    "classification_report": {
+      "Chat": {
+        "precision": 0.946058091286307,
+        "recall": 0.957983193277311,
+        "f1-score": 0.9519832985386222,
+        "support": 238.0
+      },
+      "Chien": {
+        "precision": 0.9797979797979798,
+        "recall": 0.9738955823293173,
+        "f1-score": 0.9768378650553877,
+        "support": 498.0
+      },
+      "accuracy": 0.96875,
+      "macro avg": {
+        "precision": 0.9629280355421435,
+        "recall": 0.9659393878033141,
+        "f1-score": 0.964410581797005,
+        "support": 736.0
+      },
+      "weighted avg": {
+        "precision": 0.968887526719477,
+        "recall": 0.96875,
+        "f1-score": 0.9688006546871945,
+        "support": 736.0
+      }
+    }
+  },
+  "promotion_checks": {
+    "macro_f1_not_lower": false,
+    "overall_accuracy_not_lower": false,
+    "sphynx_recall_strictly_higher": true
+  },
+  "eligible_for_activation": false,
+  "checkpoint_sha256": {
+    "first_run": "114199dfce1451f01bc7733ec497c2fe820376d928a0009090d09d479bd8892f",
+    "full_frame_feedback_v1": "55744933b999c6b82e1ab0104a019168b438e79dee7416d2b6e4b343249c5bf2"
+  },
+  "validation_sha256": "e97c8d1522fdbdab5e634b915b29e676abb73475666f35019f6a9d771ec88762",
+  "test_used": false,
+  "preprocessing_changed": true,
+  "limitations": "20 Sphynx de validation ; aucune garantie sur toutes les nouvelles photos. Poursuite d'entraînement et ajout de données simultanés ; pas d'attribution isolée à la correction humaine.",
+  "development_probe": {
+    "filename": "images (15).jpeg",
+    "role": "development_example_used_in_candidate_training",
+    "independent_evaluation": false,
+    "first_run": {
+      "category": "Chien",
+      "confidence": 0.5406652688980103
+    },
+    "full_frame_feedback_v1": {
+      "category": "Chat",
+      "confidence": 0.9996188879013062
+    }
+  }
+}
