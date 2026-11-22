@@ -115,7 +115,7 @@ def show_results(results, files, model_sha256):
             "Télécharger les photos classées (ZIP)",
             data=lambda: create_classified_zip(selected_files, selected_results, selected_corrections),
             file_name="IAnimaux_photos_classees.zip", mime="application/zip",
-            on_click="ignore", type="primary", icon="📦", width="stretch",
+            on_click="ignore", type="primary", width="stretch",
             disabled=not valid, key="download_classified_photos",
         )
         st.caption("L'archive suit les catégories retenues dans ce lot, y compris vos corrections. Les noms en double sont adaptés pour conserver toutes les photos.")
@@ -172,7 +172,7 @@ def main():
             st.session_state.pop("batch_corrections", None)
         if not model_available:
             st.error("Le modèle entraîné est introuvable. Consultez le README pour l'installer ou l'entraîner.")
-        if st.button("Lancer la classification", type="primary", icon="✨", width="stretch", disabled=not files or not model_available):
+        if st.button("Lancer la classification", type="primary", width="stretch", disabled=not files or not model_available):
             st.session_state.pop("classification_results", None)
             st.session_state.pop("batch_corrections", None)
             try:
