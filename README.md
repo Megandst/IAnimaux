@@ -367,3 +367,12 @@ Les fichiers sources des mesures sont dans
 Le script `scripts/evaluate_final.py` refuse d'écraser ces résultats ; il n'est
 pas nécessaire de le relancer. Le test a maintenant été consulté et ne doit
 plus servir à sélectionner ou régler le modèle.
+
+
+## Rapport final
+
+Le rapport rédigé se trouve dans `docs/rapport_final/IAnimaux_Rapport_final.pdf`
+(10 pages, couverture et références incluses). Le dossier contient le HTML,
+la source structurée et les instructions de régénération. Les coauteures sont
+Megan Daoust et Luzia Coelho Bento Muaquesse. Le numéro de groupe reste à ajouter
+et le texte doit être relu avant de renommer le PDF pour la remise Moodle.

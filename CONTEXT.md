@@ -5,7 +5,7 @@
 Nous développons un projet final pour le cours **INF1853 – Introduction à l'intelligence artificielle**, à l'Université du Québec en Outaouais (UQO), session d'automne 2026.
 
 **Enseignant :** Jean Jarcke Mukombelwa Malasi  
-**Équipe :** 1 personne (projet individuel)  
+**Équipe :** Megan Daoust et Luzia Coelho Bento Muaquesse (deux coauteures ; mise à jour explicite du 21 novembre 2026)<br>
 **Date de remise :** 8 décembre 2026  
 **Présentation orale :** 9 décembre 2026  
 **Pondération :** 25 % de la note finale du cours
@@ -1043,3 +1043,18 @@ Le test est désormais consulté ; ne plus le traiter comme inédit pour choisir
 le modèle. Les mesures Oxford ne garantissent pas la performance dans un refuge.
 Voir docs/evaluation_finale.md. Prochaines priorités : compréhension des erreurs,
 rapport final de 10 pages, présentation orale et archive Moodle.
+
+
+## 30. Rédaction du rapport final — 21 novembre 2026
+
+Les coauteures sont désormais Megan Daoust et Luzia Coelho Bento Muaquesse,
+selon la confirmation explicite de l’utilisatrice. Les contributions sont
+déclarées équilibrées ; cette précision remplace le périmètre individuel initial.
+Le rapport final est rédigé dans docs/rapport_final/ : PDF de dix pages au total,
+HTML modifiable, source contenu.json et script de génération. Il adapte la
+présentation du gabarit fourni, en suivant les cinq sections de l’énoncé.
+Les chiffres proviennent des artefacts locaux, avec références vérifiées et
+déclaration explicite des contributions de Codex au code et à la rédaction.
+Le numéro de groupe reste à compléter ; le nom Groupe{k}Final.pdf ne peut
+être fixé sans ce numéro. Les coauteures doivent relire et valider le rapport.
+Aucune soumission ni publication effectuée.

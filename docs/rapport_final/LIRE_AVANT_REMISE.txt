@@ -1,0 +1,24 @@
+IAnimaux — Rapport rédigé à relire avant remise
+
+IAnimaux_Rapport_final.pdf : 10 pages, couverture et références comprises.
+IAnimaux_Rapport_final.html : version lisible et modifiable dans un éditeur.
+contenu.json : source structurée utilisée pour générer le PDF et le HTML.
+generer_rapport.py : génération reproductible (reportlab et pypdf requis).
+verification.json : contrôle de pagination et éléments à compléter.
+
+À vérifier par les coauteures :
+1. Ajouter le numéro de groupe sur la page de garde (contenu.json).
+2. Relire les formulations et la déclaration des contributions équilibrées.
+3. Valider la déclaration détaillée d'utilisation de Codex.
+4. S'assurer de pouvoir expliquer les méthodes et les résultats.
+5. Renommer le PDF Groupe{k}Final.pdf avec le numéro réel, puis l'inclure
+   dans l'archive de remise avec le code et le README selon les directives.
+
+Régénération depuis la racine du dépôt, après installation de reportlab et pypdf :
+python docs/rapport_final/generer_rapport.py
+
+Les dépendances du rapport sont distinctes de celles de l'application.
+Modifier le HTML seul ne modifie pas le PDF : modifier contenu.json puis régénérer.
+Le gabarit enseignant est adapté dans son esprit (couverture, titres, légendes,
+références). Il ne s'agit pas d'une compilation de sa classe LaTeX rapport.cls.
+Aucun logo d'une autre institution ni contenu fictif du gabarit n'est repris.
