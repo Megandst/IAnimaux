@@ -65,45 +65,6 @@ def show_results(results, files, model_sha256):
     if any(row["image_sha256"] in batch_corrections for row in valid):
         st.caption("Les compteurs suivent la catégorie retenue. La prédiction et le score IA restent ceux du modèle, même après une correction humaine.")
 
-    valid_indices = [index for index, row in enumerate(results) if not row["error"]]
-    if valid_indices:
-        with st.expander("Corriger ou confirmer une photo"):
-            selected = st.selectbox(
-                "Photo à vérifier", options=valid_indices,
-                format_func=lambda index: f"{index + 1}. {results[index]['filename']}",
-                key="review_photo",
-            )
-            row = results[selected]
-            correction = corrections.get(row["image_sha256"], {})
-            st.image(row["preview"], width=180, caption=row["filename"])
-            confidence = f"{row['confidence']:.1%}".replace(".", ",")
-            st.caption(f"Prédiction du modèle : {row['category']} — {confidence}")
-            st.write("La correction s'applique au lot en cours et prépare un exemple pour un prochain réentraînement. Les futures classifications seront faites par le modèle, sans remplacement automatique par une ancienne annotation.")
-            if correction:
-                st.caption(f"Annotation déjà enregistrée pour l'apprentissage : {correction['corrected_category']}.")
-            key = f"{row['image_sha256']}_{selected}"
-            with st.form(f"correction_{key}"):
-                labels = ["Chat", "Chien"]
-                category = st.selectbox("Catégorie correcte", labels, index=labels.index(correction.get("corrected_category", effective_category(row))), key=f"category_{key}")
-                note = st.text_input("Commentaire (facultatif, par exemple : sphynx)", value=correction.get("note", ""), max_chars=500, key=f"note_{key}")
-                st.caption("Enregistrer conserve localement la photo et son étiquette corrigée. Un commentaire de race n'est pas une prédiction de race.")
-                submitted = st.form_submit_button("Enregistrer la correction")
-            if submitted:
-                try:
-                    record = save_correction(
-                        files[selected].getvalue(), row["filename"], category, row,
-                        model_sha256, note, db_path=FEEDBACK_DB,
-                    )
-                except (OSError, ValueError, sqlite3.Error):
-                    st.error("La correction n'a pas pu être enregistrée. Vérifiez la photo et le dossier local de données.")
-                else:
-                    batch_corrections[row["image_sha256"]] = record["corrected_category"]
-                    message = f"Correction du lot enregistrée : {record['corrected_category']}. Les annotations serviront à préparer un prochain réentraînement."
-                    if not record["training_eligible"]:
-                        message += " Cette photo reste exclue des nouveaux exemples d'entraînement pour préserver la séparation des données."
-                    st.session_state["feedback_notice"] = message
-                    st.rerun()
-
     with st.container(border=True, key="export_panel"):
         st.subheader("Vos photos, bien rangées")
         st.write("Téléchargez une archive ZIP avec deux dossiers : **chat/** et **chien/**.")
